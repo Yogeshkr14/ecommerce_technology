@@ -1,406 +1,764 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Amazon mentorship and consulting services. Learn, grow, and build your Amazon business with expert guidance." />
+  <title>Amazon Growth Mentorship</title>
 
-    <title>Ecommerce Technology — E-commerce Growth Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <link rel="stylesheet" href="css/style.css">
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e9edf3;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .logo span {
+      color: #ff9900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #4b5563;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #ff9900;
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border-radius: 8px;
+      background: #ff9900;
+      color: #111827 !important;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 153, 0, .15), transparent 30%),
+        linear-gradient(135deg, #f8fafc, #ffffff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      margin-bottom: 20px;
+      border-radius: 50px;
+      background: #fff3df;
+      color: #b45309;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      margin-bottom: 24px;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: #ff9900;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 18px;
+      color: #667085;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: #ff9900;
+      color: #111827;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #f08c00;
+    }
+
+    .btn-secondary {
+      border: 1px solid #d8dee8;
+      background: white;
+      color: #344054;
+    }
+
+    .btn-secondary:hover {
+      border-color: #ff9900;
+    }
+
+    .hero-card {
+      background: #111827;
+      color: white;
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, .15);
+    }
+
+    .hero-card .amazon-mark {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .amazon-mark span {
+      color: #ff9900;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 20px;
+      border: 1px solid #293244;
+      border-radius: 14px;
+      background: #182131;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: #ff9900;
+    }
+
+    .stat small {
+      color: #b9c1ce;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      color: #ff9900;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      line-height: 1.15;
+      color: #111827;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #667085;
+      margin-bottom: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      margin-bottom: 13px;
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: #fff3df;
+      color: #ff9900;
+      font-size: 13px;
+    }
+
+    .about-box {
+      padding: 35px;
+      border-radius: 20px;
+      background: #f8fafc;
+      border: 1px solid #e7ebf0;
+    }
+
+    .about-box h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .about-box p {
+      color: #667085;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #f8fafc;
+    }
+
+    .service-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e7ebf0;
+      transition: .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(15, 23, 42, .08);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #fff3df;
+      color: #d97706;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .service-card p {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    /* PROCESS */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .process-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .number {
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #111827;
+      color: #ff9900;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .process-item p {
+      color: #667085;
+      margin-top: 8px;
+    }
+
+    /* CTA */
+    .contact {
+      background: #111827;
+      color: white;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .contact .section-title {
+      color: white;
+    }
+
+    .contact .section-description {
+      color: #b9c1ce;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-card {
+      padding: 18px;
+      border: 1px solid #293244;
+      border-radius: 12px;
+      background: #182131;
+    }
+
+    .contact-card small {
+      display: block;
+      color: #9da8b8;
+      margin-bottom: 4px;
+    }
+
+    .contact-card a {
+      color: white;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 25px 0;
+      background: #0b1019;
+      color: #8993a3;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 25px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <a href="#" class="logo">Ecommerce Technology<span>.</span></a>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Amazon<span>Mentor</span></a>
 
-        <nav>
-            <a href="#services">Services</a>
-            <!-- SERVICES -->
-<section class="services" id="services">
-
-    <div class="section-label">
-        <span>01</span>
-        <span>OUR EXPERTISE</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#contact" class="nav-button">Let's Talk</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="section-content">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
 
-        <h2>
-            Everything your
-            <em>store needs.</em>
+      <div>
+        <span class="badge">AMAZON GROWTH & MENTORSHIP</span>
+
+        <h1>
+          Build. Grow.<br />
+          <span>Scale on Amazon.</span>
+        </h1>
+
+        <p>
+          We help aspiring sellers, entrepreneurs, and growing Amazon
+          businesses turn ideas into profitable online brands through
+          practical mentorship and strategic guidance.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="amazon-mark">
+          Amazon<span>Mentor</span>
+        </div>
+
+        <p style="color:#c5ccd7; margin-bottom:25px;">
+          Practical guidance for every stage of your Amazon journey.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>1:1</strong>
+            <small>Personal Mentorship</small>
+          </div>
+
+          <div class="stat">
+            <strong>360°</strong>
+            <small>Business Guidance</small>
+          </div>
+
+          <div class="stat">
+            <strong>24/7</strong>
+            <small>Learning Resources</small>
+          </div>
+
+          <div class="stat">
+            <strong>100%</strong>
+            <small>Practical Approach</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+
+      <div>
+        <div class="section-label">Who We Are</div>
+
+        <h2 class="section-title">
+          Your partner in the Amazon journey.
         </h2>
 
-        <div class="service-list">
+        <div class="about-text">
+          <p>
+            We are an Amazon mentorship and consulting team focused on
+            helping people understand the marketplace, make better decisions,
+            and build sustainable businesses.
+          </p>
 
-            <div class="service-item">
-                <span>01</span>
-                <div>
-                    <h3>E-commerce Development</h3>
-                    <p>
-                        High-performance online stores built for
-                        exceptional customer experiences,
-                        scalability and conversion.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <span>02</span>
-                <div>
-                    <h3>Shopify Solutions</h3>
-                    <p>
-                        From store setup to custom Shopify
-                        development, we create scalable
-                        commerce experiences built around your brand.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <span>03</span>
-                <div>
-                    <h3>Marketplace Solutions</h3>
-                    <p>
-                        Build and manage your presence across
-                        leading marketplaces with technology,
-                        strategy and operational support.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <span>04</span>
-                <div>
-                    <h3>Performance Marketing</h3>
-                    <p>
-                        Data-driven acquisition campaigns designed
-                        to bring qualified traffic and turn visitors
-                        into customers.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <span>05</span>
-                <div>
-                    <h3>SEO & Conversion Optimization</h3>
-                    <p>
-                        Increase organic visibility and optimize
-                        every stage of the customer journey
-                        to improve conversion and revenue.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <span>06</span>
-                <div>
-                    <h3>Technology & Automation</h3>
-                    <p>
-                        Smart integrations and automation that
-                        connect your store, marketing, operations
-                        and business systems.
-                    </p>
-                </div>
-            </div>
-
+          <p>
+            Whether you're completely new to Amazon or already selling,
+            our goal is simple: give you the knowledge, strategy, and
+            confidence to move forward.
+          </p>
         </div>
 
-    </div>
+        <ul class="check-list">
+          <li>Beginner-friendly mentorship</li>
+          <li>Action-focused strategies</li>
+          <li>Personalized business guidance</li>
+          <li>Long-term growth mindset</li>
+        </ul>
+      </div>
 
-</section>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="#contact" class="nav-cta">Let's Talk ↗</a>
-    </header>
-
-
-    <!-- HERO -->
-    <main>
-
-        <section class="hero">
-
-    <div class="hero-top">
-        <p class="eyebrow">E-COMMERCE  •  DIGITAL  •  GROWTH</p>
-
-        <p class="hero-intro">
-            We help ambitious brands build, launch and scale
-            high-performance e-commerce businesses.
-           
+      <div class="about-box">
+        <h3>Learn from experience.</h3>
+        <p>
+          Amazon can feel complicated when you're trying to figure
+          everything out alone. We break the process into clear,
+          understandable steps so you can focus on building your business.
         </p>
-    </div>
 
-    <div class="hero-main">
-
-        <div class="hero-title">
-            <p class="hero-kicker">E-COMMERCE TECHNOLOGY & GROWTH</p>
-
-            <h1>
-                WE BUILD
-                <br>
-                <span>BRANDS</span>
-                <br>
-                THAT <i>MOVE.</i>
-                               
-            </h1>
-        </div>
-
-        <div class="hero-side">
-            <p>
-                Strategy, creative, technology and growth —
-                brought together to create businesses people remember.
-            </p>
-
-            <a href="#work" class="hero-explore">
-                <span>Explore our work</span>
-                <strong>↘</strong>
-            </a>
-        </div>
-
-    </div>
-
-    <div class="hero-bottom">
-
-        <div class="hero-scroll">
-            <span>SCROLL TO EXPLORE</span>
-            <span>↓</span>
-        </div>
-
-        <div class="hero-location">
-            INDIA — WORLDWIDE
-        </div>
-
-    </div>
-        </section>
-
-
-        <!-- SERVICES -->
-        <section class="services" id="services">
-
-            <div class="section-label">
-                <span>01</span>
-                <span>WHAT WE DO</span>
-            </div>
-
-            <div class="section-content">
-
-                <h2>
-                    We turn ideas into
-                    <em>digital businesses.</em>
-                </h2>
-
-                <div class="service-list">
-
-                    <div class="service-item">
-                        <span>01</span>
-                        <div>
-                            <h3>E-commerce Development</h3>
-                            <p>
-                                High-performance online stores
-                                designed around your customers.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="service-item">
-                        <span>02</span>
-                        <div>
-                            <h3>Brand & Creative</h3>
-                            <p>
-                                Visual identities and experiences
-                                that make brands memorable.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="service-item">
-                        <span>03</span>
-                        <div>
-                            <h3>Digital Marketing</h3>
-                            <p>
-                                Data-driven campaigns that turn
-                                attention into revenue.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="service-item">
-                        <span>04</span>
-                        <div>
-                            <h3>Growth & Strategy</h3>
-                            <p>
-                                Clear strategies designed to build
-                                sustainable long-term growth.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- WORK -->
-        <section class="work" id="work">
-
-            <div class="section-label">
-                <span>02</span>
-                <span>SELECTED WORK</span>
-            </div>
-
-            <div class="work-heading">
-                <h2>
-                    Work that
-                    <em>speaks.</em>
-                </h2>
-
-                <p>
-                    A selection of digital experiences,
-                    e-commerce stores and growth projects.
-                </p>
-            </div>
-
-            <div class="work-grid">
-
-                <div class="work-card work-large">
-                    <div class="work-image">
-                        PROJECT 01
-                    </div>
-
-                    <div class="work-info">
-                        <h3>Fashion E-commerce</h3>
-                        <p>Strategy • Design • Development</p>
-                    </div>
-                </div>
-
-
-                <div class="work-card">
-                    <div class="work-image">
-                        PROJECT 02
-                    </div>
-
-                    <div class="work-info">
-                        <h3>Luxury Brand</h3>
-                        <p>Branding • Digital Experience</p>
-                    </div>
-                </div>
-
-
-                <div class="work-card">
-                    <div class="work-image">
-                        PROJECT 03
-                    </div>
-
-                    <div class="work-info">
-                        <h3>D2C Store</h3>
-                        <p>E-commerce • Growth</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-
-            <div class="section-label">
-                <span>03</span>
-                <span>WHY US</span>
-            </div>
-
-            <div class="about-content">
-
-                <h2>
-                    Not just another
-                    <em>agency.</em>
-                </h2>
-
-                <p>
-                    We partner with ambitious businesses to build
-                    digital experiences that look exceptional,
-                    perform brilliantly and create measurable growth.
-                </p>
-
-                <a href="#contact" class="text-link">
-                    Work with us ↗
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- STATS -->
-        <section class="stats">
-
-            <div class="stat">
-                <strong>50+</strong>
-                <span>Projects</span>
-            </div>
-
-            <div class="stat">
-                <strong>20+</strong>
-                <span>Brands</span>
-            </div>
-
-            <div class="stat">
-                <strong>5+</strong>
-                <span>Years Experience</span>
-            </div>
-
-            <div class="stat">
-                <strong>∞</strong>
-                <span>Ideas</span>
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="contact" id="contact">
-
-            <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
-
-            <h2>
-                Let's build something
-                <em>great.</em>
-            </h2>
-
-            <a href="mailto:info@ecommercetechnology" class="contact-button">
-                Start a conversation ↗
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-logo">
-            Ecommerce Technology<span>.</span>
-        </div>
+        <br />
 
         <p>
-            E-commerce • Digital • Growth
+          From product research and listing strategy to advertising and
+          scaling, we're here to help you make informed decisions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-label">What We Do</div>
+
+      <h2 class="section-title">Our Services</h2>
+
+      <p class="section-description">
+        Practical Amazon services designed to help you start smarter
+        and grow with confidence.
+      </p>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="icon">🔎</div>
+          <h3>Product Research</h3>
+          <p>
+            Discover product opportunities and understand market demand,
+            competition, and potential before making important decisions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">📦</div>
+          <h3>Amazon FBA Guidance</h3>
+          <p>
+            Learn how the FBA model works and get guidance through the
+            important steps of setting up and managing your business.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">📈</div>
+          <h3>Growth Strategy</h3>
+          <p>
+            Build a practical roadmap for improving your Amazon business
+            and creating opportunities for sustainable growth.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🎯</div>
+          <h3>1:1 Mentorship</h3>
+          <p>
+            Get personalized guidance based on your goals, experience,
+            challenges, and current stage of business.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">🛒</div>
+          <h3>Listing Optimization</h3>
+          <p>
+            Improve product pages with better positioning, messaging,
+            keywords, and customer-focused content.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">💡</div>
+          <h3>Business Consultation</h3>
+          <p>
+            Discuss your Amazon business with us and identify practical
+            next steps based on your current situation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+
+      <div class="section-label">Our Approach</div>
+
+      <h2 class="section-title">Simple. Practical. Focused.</h2>
+
+      <p class="section-description">
+        We keep mentorship straightforward so you always know what to
+        focus on next.
+      </p>
+
+      <div class="process-grid">
+
+        <div class="process-item">
+          <div class="number">01</div>
+          <h3>Understand</h3>
+          <p>
+            We understand your goals, current situation, and challenges.
+          </p>
+        </div>
+
+        <div class="process-item">
+          <div class="number">02</div>
+          <h3>Plan</h3>
+          <p>
+            Together, we create a clear strategy and actionable roadmap.
+          </p>
+        </div>
+
+        <div class="process-item">
+          <div class="number">03</div>
+          <h3>Grow</h3>
+          <p>
+            Execute, learn, optimize, and keep moving toward your goals.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact-box">
+
+      <div>
+        <div class="section-label">Let's Connect</div>
+
+        <h2 class="section-title">
+          Ready to talk about your Amazon journey?
+        </h2>
+
+        <p class="section-description">
+          Have a question, want mentorship, or simply want to understand
+          whether Amazon is right for you? Let's have a conversation.
         </p>
 
-        <p>
-            © 2026 ecommerce technology
-        </p>
+        <br />
 
-    </footer>
+        <a href="mailto:hello@yourbrand.com" class="btn btn-primary">
+          Contact Us
+        </a>
+      </div>
+
+      <div class="contact-details">
+
+        <div class="contact-card">
+          <small>Email</small>
+          <a href="mailto:hello@yourbrand.com">
+            hello@yourbrand.com
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <small>WhatsApp</small>
+          <a href="https://wa.me/911234567890" target="_blank">
+            +91 12345 67890
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <small>Book a Conversation</small>
+          <a href="mailto:hello@yourbrand.com?subject=Amazon%20Mentorship%20Inquiry">
+            Let's discuss your goals →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2026 AmazonMentor. All rights reserved.
+      <br />
+      <span style="font-size:11px;">
+        Amazon is a trademark of Amazon.com, Inc. This website is not
+        affiliated with or endorsed by Amazon.com, Inc.
+      </span>
+    </div>
+  </footer>
 
 </body>
 </html>
+```
